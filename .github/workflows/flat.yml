@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
+      - ./postprocess.js
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -21,3 +22,4 @@ jobs:
         with:
           http_url: https://content.guardianapis.com/search?api-key=test&show-fields=all
           downloaded_filename: capi.json
+          postprocess: ./postprocess.js
